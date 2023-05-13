@@ -5,20 +5,25 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Roll extends Admin{
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long rollId;
     private String rollName;
 
     public Roll() {
     }
 
-    public Roll(String adminName, Long rollId, String rollName) {
-        super(adminName);
-        this.rollId = rollId;
+    public Roll(String adminName, BigDecimal price, String rollName) {
+        super(adminName, price);
         this.rollName = rollName;
     }
 
+    public String getRollName() {
+        return rollName;
+    }
+
+    public void setRollName(String rollName) {
+        this.rollName = rollName;
+    }
 }

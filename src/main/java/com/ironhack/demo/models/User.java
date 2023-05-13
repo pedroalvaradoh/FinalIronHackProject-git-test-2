@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Inheritance (strategy = InheritanceType.JOINED)
 public class User {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -14,16 +15,20 @@ public class User {
     private Long creditCardInfo;
     @OneToMany (mappedBy = "user")
     private List <BookingCart> bookingCartList;
-
+    @OneToMany (mappedBy = "user")
+    private List <Activity> activityList;
     public User() {
     }
 
-    public User(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList) {
+    public User(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList, List<Activity> activityList) {
         this.userName = userName;
         this.email = email;
         this.creditCardInfo = creditCardInfo;
         this.bookingCartList = bookingCartList;
+        this.activityList = activityList;
+    }
 
+    public User(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList) {
     }
 
     public String getUserName() {
@@ -56,5 +61,13 @@ public class User {
 
     public void setBookingCartList(List<BookingCart> bookingCartList) {
         this.bookingCartList = bookingCartList;
+    }
+
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
+
+    public void setActivityList(List<Activity> activityList) {
+        this.activityList = activityList;
     }
 }
