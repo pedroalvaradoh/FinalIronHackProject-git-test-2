@@ -11,11 +11,9 @@ public class Admin {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long adminId;
     private String adminName;
-    private BigDecimal price;
 
-    public Admin(String adminName, BigDecimal price) {
+    public Admin(String adminName) {
         this.adminName = adminName;
-        this.price = price;
     }
 
     public Admin() {
@@ -29,11 +27,4 @@ public class Admin {
         this.adminName = adminName;
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
 }

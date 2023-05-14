@@ -15,7 +15,6 @@ public class Roll extends Admin{
     }
 
     public Roll(String adminName, BigDecimal price, String rollName) {
-        super(adminName, price);
         this.rollName = rollName;
     }
 

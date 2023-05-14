@@ -13,7 +13,7 @@ public class User {
     private String userName;
     private String email;
     private Long creditCardInfo;
-    @ManyToMany (mappedBy = "userList")
+    @OneToMany (mappedBy = "user")
     private List <BookedActivity> bookedActivityList;
     public User() {
     }

@@ -10,21 +10,22 @@ public class BookedActivity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
-    @ManyToMany
-    private List<User> userList;
+    @ManyToOne
+    private User user;
     @ManyToOne
     @JsonIgnore
     private Instructor instructor;
     @ManyToOne
+    @JsonIgnore
     private Activity activity;
-
 
     public BookedActivity() {
     }
 
-    public BookedActivity(List<User> userList, Instructor instructor) {
-        this.userList = userList;
+    public BookedActivity(User user, Instructor instructor, Activity activity) {
+        this.user = user;
         this.instructor = instructor;
+        this.activity = activity;
     }
 
     public Long getCartId() {
@@ -35,12 +36,12 @@ public class BookedActivity {
         this.cartId = cartId;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Instructor getInstructor() {
@@ -51,6 +52,12 @@ public class BookedActivity {
         this.instructor = instructor;
     }
 
+    public Activity getActivity() {
+        return activity;
+    }
 
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
 }
 
