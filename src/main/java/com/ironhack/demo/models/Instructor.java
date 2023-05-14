@@ -11,17 +11,15 @@ public class Instructor extends User {
     @Column(name = "instructor_status", columnDefinition = "ENUM('ON','OFF','BUSY')", nullable = false)
     private InstructorStatus instructorStatus;
     @OneToMany
-    @JoinColumn (name = "pending_activities", referencedColumnName = "activity_code")
-    private List <Activity> activityList;
+            (mappedBy = "instructor")
+    private List <BookedActivity> bookedActivityList;
 
     public Instructor() {
     }
 
-    public Instructor(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList, Long phoneNumber, InstructorStatus instructorStatus, List<Activity> activityList) {
-        super(userName, email, creditCardInfo, bookingCartList);
-        this.phoneNumber = phoneNumber;
+    public Instructor(InstructorStatus instructorStatus, List<BookedActivity> bookedActivityList) {
         this.instructorStatus = instructorStatus;
-        this.activityList = activityList;
+        this.bookedActivityList = bookedActivityList;
     }
 
     public Long getPhoneNumber() {
@@ -40,12 +38,12 @@ public class Instructor extends User {
         this.instructorStatus = instructorStatus;
     }
 
-    public List<Activity> getActivityList() {
-        return activityList;
+    public List<BookedActivity> getBookedActivityList() {
+        return bookedActivityList;
     }
 
-    public void setActivityList(List<Activity> activityList) {
-        this.activityList = activityList;
+    public void setBookedActivityList(List<BookedActivity> bookedActivityList) {
+        this.bookedActivityList = bookedActivityList;
     }
 }
 

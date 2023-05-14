@@ -13,22 +13,24 @@ public class User {
     private String userName;
     private String email;
     private Long creditCardInfo;
-    @OneToMany (mappedBy = "user")
-    private List <BookingCart> bookingCartList;
-    @OneToMany (mappedBy = "user")
-    private List <Activity> activityList;
+    @ManyToMany (mappedBy = "userList")
+    private List <BookedActivity> bookedActivityList;
     public User() {
     }
 
-    public User(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList, List<Activity> activityList) {
+    public User(String userName, String email, Long creditCardInfo, List<BookedActivity> bookedActivityList) {
         this.userName = userName;
         this.email = email;
         this.creditCardInfo = creditCardInfo;
-        this.bookingCartList = bookingCartList;
-        this.activityList = activityList;
+        this.bookedActivityList = bookedActivityList;
     }
 
-    public User(String userName, String email, Long creditCardInfo, List<BookingCart> bookingCartList) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -55,19 +57,11 @@ public class User {
         this.creditCardInfo = creditCardInfo;
     }
 
-    public List<BookingCart> getBookingCartList() {
-        return bookingCartList;
+    public List<BookedActivity> getGetBookedActivityList() {
+        return bookedActivityList;
     }
 
-    public void setBookingCartList(List<BookingCart> bookingCartList) {
-        this.bookingCartList = bookingCartList;
-    }
-
-    public List<Activity> getActivityList() {
-        return activityList;
-    }
-
-    public void setActivityList(List<Activity> activityList) {
-        this.activityList = activityList;
+    public void setGetBookedActivityList(List<BookedActivity> getBookedActivityList) {
+        this.bookedActivityList = getBookedActivityList;
     }
 }
