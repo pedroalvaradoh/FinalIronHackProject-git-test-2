@@ -1,27 +1,22 @@
-package com.ironhack.demo.models;
+package com.ironhack.demo.dto;
 
 import com.ironhack.demo.enums.ActivityStatus;
-import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
-@Entity
-public class Activity {
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+public class ActivityDTO {
     private Long activityCode;
     private String activityName;
     private BigDecimal price;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "activity_status", columnDefinition="ENUM('AVAILABLE','NOT_AVAILABLE','WAITING_LIST')",nullable = false)
     private ActivityStatus activityStatus;
-    @OneToMany (mappedBy = "activity")
-    private List <BookedActivity> bookedActivityList;
-    @ManyToMany(mappedBy = "activities")
-    private List<Admin> admins;
 
-    public Activity() {
+    public ActivityDTO(String activityName, BigDecimal price, ActivityStatus activityStatus) {
+        this.activityName = activityName;
+        this.price = price;
+        this.activityStatus = activityStatus;
+    }
+
+    public ActivityDTO() {
     }
 
     public Long getActivityCode() {
@@ -54,13 +49,5 @@ public class Activity {
 
     public void setActivityStatus(ActivityStatus activityStatus) {
         this.activityStatus = activityStatus;
-    }
-
-    public List<BookedActivity> getBookedActivityList() {
-        return bookedActivityList;
-    }
-
-    public void setBookedActivityList(List<BookedActivity> bookedActivityList) {
-        this.bookedActivityList = bookedActivityList;
     }
 }

@@ -1,6 +1,7 @@
 package com.ironhack.demo.controllers;
 
 import com.ironhack.demo.models.Activity;
+import com.ironhack.demo.models.Instructor;
 import com.ironhack.demo.models.User;
 import com.ironhack.demo.services.ActivityService;
 import com.ironhack.demo.services.UserService;

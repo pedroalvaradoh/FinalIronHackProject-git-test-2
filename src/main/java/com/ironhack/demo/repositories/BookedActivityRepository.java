@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookingCartRepository extends JpaRepository <BookedActivity, Long> {
+public interface BookedActivityRepository extends JpaRepository <BookedActivity, Long> {
+
 }

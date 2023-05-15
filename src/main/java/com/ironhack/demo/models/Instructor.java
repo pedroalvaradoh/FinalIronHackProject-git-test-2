@@ -1,5 +1,6 @@
 package com.ironhack.demo.models;
 
+import com.ironhack.demo.enums.InstructorStatus;
 import jakarta.persistence.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.ironhack.demo.models;
+package com.ironhack.demo.enums;
 
 public enum ActivityStatus {
     AVAILABLE, NOT_AVAILABLE,WAITING_LIST;
