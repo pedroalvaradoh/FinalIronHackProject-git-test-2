@@ -21,7 +21,6 @@ ActivityService activityService;
     public List <Activity> activityList() { return activityService.activityList();
 
     }
-    
 
     //delete activity
     @DeleteMapping ("/delete-activity/{id}")
