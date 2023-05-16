@@ -18,9 +18,11 @@ public class Instructor extends User {
     public Instructor() {
     }
 
-    public Instructor(InstructorStatus instructorStatus, List<BookedActivity> bookedActivityList) {
+    public Instructor(String userName, String email, Long creditCardInfo, List<BookedActivity> bookedActivityList, Long phoneNumber, InstructorStatus instructorStatus, List<BookedActivity> bookedActivityList1) {
+        super(userName, email, creditCardInfo, bookedActivityList);
+        this.phoneNumber = phoneNumber;
         this.instructorStatus = instructorStatus;
-        this.bookedActivityList = bookedActivityList;
+        this.bookedActivityList = bookedActivityList1;
     }
 
     public Long getPhoneNumber() {
