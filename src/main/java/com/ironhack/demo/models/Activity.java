@@ -24,6 +24,12 @@ public class Activity {
     public Activity() {
     }
 
+    public Activity(String activityName, BigDecimal price, ActivityStatus activityStatus) {
+        this.activityName = activityName;
+        this.price = price;
+        this.activityStatus = activityStatus;
+    }
+
     public Long getActivityCode() {
         return activityCode;
     }
