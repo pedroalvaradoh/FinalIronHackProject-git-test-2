@@ -67,7 +67,7 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 		instructor3 = new Instructor("Daniel","emaildedaniel@gmail.com",60153277L,null,644156303L,InstructorStatus.BUSY),
 		instructor4 = new Instructor("Kaitlyn","emaildekaitlyn@gmail.com",40151902L,null,644156303L,InstructorStatus.BUSY),
 		instructor5 = new Instructor("Eva","emaildeeva@gmail.com",60153277L,null,644156303L,InstructorStatus.OFF)
-		
+
 		));
 
 		Activity activity1;
@@ -83,6 +83,13 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 				activity4 = new Activity("Aro",new BigDecimal(16.99),ActivityStatus.NOT_AVAILABLE),
 				activity5= new Activity("Stretching",new BigDecimal(15.99),ActivityStatus.WAITING_LIST)
 
+		));
+
+		BookedActivity bookedActivity1;
+		BookedActivity bookedActivity2;
+
+		List <BookedActivity> bookedActivityList = bookedActivityRepository.saveAll(List.of(
+				bookedActivity1 = new BookedActivity(user1,instructor4,activity3)
 		));
 
 	}
