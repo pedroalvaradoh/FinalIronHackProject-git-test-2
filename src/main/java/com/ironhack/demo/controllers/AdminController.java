@@ -35,7 +35,7 @@ public class AdminController {
         return adminService.addActivity(activity);
     }
 
-    @PatchMapping("/update-activity-status")
+    @PatchMapping("/update-activity-status/{activityId}")
     @ResponseStatus(HttpStatus.OK)
     public Activity patchActivity(@RequestBody ActivityDTO activityDTO) {
         return adminService.updateActivity(activityDTO);

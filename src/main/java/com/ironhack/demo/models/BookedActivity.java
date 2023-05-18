@@ -1,5 +1,6 @@
 package com.ironhack.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -11,6 +12,7 @@ public class BookedActivity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
     @ManyToOne
+    @JsonBackReference
     private User user;
     @ManyToOne
     @JsonIgnore

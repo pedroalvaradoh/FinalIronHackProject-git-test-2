@@ -1,5 +1,6 @@
 package com.ironhack.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ironhack.demo.enums.ActivityStatus;
 import jakarta.persistence.*;
 
@@ -17,6 +18,7 @@ public class Activity {
     @Column(name = "activity_status", columnDefinition="ENUM('AVAILABLE','NOT_AVAILABLE','WAITING_LIST')",nullable = false)
     private ActivityStatus activityStatus;
     @OneToMany (mappedBy = "activity")
+    @JsonIgnore
     private List <BookedActivity> bookedActivityList;
     @ManyToMany(mappedBy = "activities")
     private List<Admin> admins;

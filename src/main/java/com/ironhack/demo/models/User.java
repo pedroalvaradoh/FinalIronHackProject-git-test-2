@@ -1,5 +1,7 @@
 package com.ironhack.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,6 +16,7 @@ public class User {
     private String email;
     private Long creditCardInfo;
     @OneToMany (mappedBy = "user")
+    @JsonManagedReference
     private List <BookedActivity> bookedActivityList;
     public User() {
     }

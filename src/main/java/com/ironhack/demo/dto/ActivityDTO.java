@@ -10,6 +10,10 @@ public class ActivityDTO {
     private BigDecimal price;
     private ActivityStatus activityStatus;
 
+    public ActivityDTO(Long activityCode) {
+        this.activityCode = activityCode;
+    }
+
     public ActivityDTO(String activityName, BigDecimal price, ActivityStatus activityStatus) {
         this.activityName = activityName;
         this.price = price;
