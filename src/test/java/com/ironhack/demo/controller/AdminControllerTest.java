@@ -112,6 +112,9 @@ public class AdminControllerTest {
     void shouldReturnAllUsers_WhenGetMethodIsCalled() throws Exception {
         mockMvc.perform(get("/check-user"))
                 .andExpect(status().isOk());
+
+        //assertTrue(result.getResponse().getContentAsString().contains("Maria"));
+
     }
 //REVISAR ESTE TEST
     @Test
@@ -128,4 +131,15 @@ public class AdminControllerTest {
             throw new RuntimeException(e);
         }
     }
+
+    //REVISAR ESTE TEST
+    /*@Test
+    void shouldDeleteUser_WhenDeleteMethodIsCalled() throws Exception {
+        Long userId = 1l;
+        mockMvc.perform(delete("/delete-user/{userId}"),userId)
+                .andExpect(status().isNoContent());
+    }
+    /* Long activityId = 1L;
+        mockMvc.perform(delete("/delete-activityyy/{id}", activityId))
+                .andExpect(status().isNoContent());*/
 }

@@ -2,14 +2,8 @@ package com.ironhack.demo;
 
 import com.ironhack.demo.enums.ActivityStatus;
 import com.ironhack.demo.enums.InstructorStatus;
-import com.ironhack.demo.models.Activity;
-import com.ironhack.demo.models.BookedActivity;
-import com.ironhack.demo.models.Instructor;
-import com.ironhack.demo.models.User;
-import com.ironhack.demo.repositories.ActivityRepository;
-import com.ironhack.demo.repositories.BookedActivityRepository;
-import com.ironhack.demo.repositories.InstructorRepository;
-import com.ironhack.demo.repositories.UserRepository;
+import com.ironhack.demo.models.*;
+import com.ironhack.demo.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -34,6 +28,10 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 
 	@Autowired
 	ActivityRepository activityRepository;
+	@Autowired
+	AdminRepository adminRepository;
+	@Autowired
+	RollRepository rollRepository;
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -45,7 +43,7 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 		User user4;
 
 		List <User> userList = userRepository.saveAll(List.of(
-				user1 = new User ("Nathalia Aristigueta","emailusuario1@gmail.com",4922180L, null),
+				user1 = new User ("Claudia Alvarez","emailusuario1@gmail.com",4922180L, null),
 		user2 = new User("Ana Sanchez","emaildeana@gmail.com",6784291L,null),
 		user3 = new User ("Oriana Estevez","emaildeoriana1@gmail.com",4922383L, null),
 		user4 = new User ("Laura Caceres","emaildelaura@gmail.com",5622180L, null)
@@ -91,6 +89,19 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 		List <BookedActivity> bookedActivityList = bookedActivityRepository.saveAll(List.of(
 				bookedActivity1 = new BookedActivity(user1,instructor4,activity3)
 		));
+
+		Admin admin1;
+		Admin admin2;
+
+		List <Admin> adminList = adminRepository.saveAll(List.of(
+				admin1 = new Admin("Nathalia Aristigueta"),
+				admin2 = new Admin("Pedro Alvarado")
+		));
+
+		Roll roll1 = new Roll("Jose Solera");
+
+		rollRepository.save(roll1);
+
 
 	}
 }

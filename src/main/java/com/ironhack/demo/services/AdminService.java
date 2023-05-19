@@ -34,6 +34,8 @@ public class AdminService {
         return activityRepository.save(activity);
 
     }
+
+    //MANEJAR EXCEPCIONES
     public Activity updateActivity(ActivityDTO activityDTO) {
         Activity activity = activityRepository.findById(activityDTO.getActivityCode()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Activity not found"));
         activity.setActivityName(activityDTO.getActivityName());
@@ -54,5 +56,10 @@ public class AdminService {
     //public User user (UserDTO userDTO) {
     //    User user = userRepository.findAllById(UserDTO.ge)
     //}
+
+    public void deleteUser(Long id) {
+        userRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "User does not exist"));
+        userRepository.deleteById(id);
+    }
 
 }

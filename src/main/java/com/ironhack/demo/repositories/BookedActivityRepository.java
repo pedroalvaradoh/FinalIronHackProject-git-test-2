@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookedActivityRepository extends JpaRepository <BookedActivity, Long> {
 
+    //checkInstructorByStatus, checkActivityByStatus, checkActivityByPrice
+
+
 }

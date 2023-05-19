@@ -58,4 +58,9 @@ public class AdminController {
     public List <User> putUser(@RequestBody UserDTO userDTO) {
         return null;
     }
+
+    @DeleteMapping ("delete-user/{id}")
+    public void deleteUsers(@PathVariable Long id) {
+        adminService.deleteUser(id);
+    }
 }
