@@ -29,6 +29,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -93,7 +94,6 @@ public class AdminControllerTest {
 
     ActivityDTO activityDTO = new ActivityDTO("HIT",new BigDecimal(11.99),ActivityStatus.NOT_AVAILABLE);
 
-    //REVISAR DTO TEST!!!!!!!!!!!!!!!
     @Test
     void shouldUpdateActivity_WhenPatchMethodIsCalled() throws Exception {
 
@@ -120,29 +120,24 @@ public class AdminControllerTest {
     }
 //REVISAR ESTE TEST
     @Test
-    void  shouldUpdateUser_WhenPutMethodIsCalled() {
+        void shouldUpdateUser_WhenPutMethodIsCalled() {
+
         UserDTO userDTO = new UserDTO();
         try {
-            mockMvc.perform(put("/update-user/{id}", 1L)
+            mockMvc.perform(put("/update-user/{id}", 1)
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(objectMapper.writeValueAsString(userDTO)))
                     .andExpect(status().isOk());
-        } catch (JsonProcessingException e) {
-            System.err.println("Error al procesar el objeto JSON: " + e.getMessage());
         } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+            System.err.println("Error al procesar el objeto JSON: " + e.getMessage());}
+
     }
 
     //REVISAR ESTE TEST
-    /*@Test
+    @Test
     void shouldDeleteUser_WhenDeleteMethodIsCalled() throws Exception {
-        Long userId = 1l;
-        mockMvc.perform(delete("/delete-user/{userId}"),userId)
+        Long userId = 1L;
+        mockMvc.perform(delete("/delete-user/{id}",id))
                 .andExpect(status().isNoContent());
     }
-    /* Long activityId = 1L;
-        mockMvc.perform(delete("/delete-activityyy/{id}", activityId))
-                .andExpect(status().isNoContent());*/
-
 }

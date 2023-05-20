@@ -43,7 +43,7 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 		User user4;
 
 		List <User> userList = userRepository.saveAll(List.of(
-				user1 = new User ("Claudia Alvarez","emailusuario1@gmail.com",4922180L, null),
+				user1 = new User ("Claudia Alvarez","emaildeclaudia@gmail.com",4922180L, null),
 		user2 = new User("Ana Sanchez","emaildeana@gmail.com",6784291L,null),
 		user3 = new User ("Oriana Estevez","emaildeoriana1@gmail.com",4922383L, null),
 		user4 = new User ("Laura Caceres","emaildelaura@gmail.com",5622180L, null)
@@ -60,11 +60,11 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 
 		List <Instructor> instructors = instructorRepository.saveAll(List.of(
 
-		instructor1 = new Instructor("Arlett","emaildearlett@gmail.com",338192L,null,644156303L,InstructorStatus.ON),
-		instructor2 = new Instructor("Karem","emaildekarem@gmail.com",448325L,null,644156303L,InstructorStatus.ON),
-		instructor3 = new Instructor("Daniel","emaildedaniel@gmail.com",60153277L,null,644156303L,InstructorStatus.BUSY),
-		instructor4 = new Instructor("Kaitlyn","emaildekaitlyn@gmail.com",40151902L,null,644156303L,InstructorStatus.BUSY),
-		instructor5 = new Instructor("Eva","emaildeeva@gmail.com",60153277L,null,644156303L,InstructorStatus.OFF)
+		instructor1 = new Instructor("Arlett Oropeza","emaildearlett@gmail.com",338192L,null,644156303L,InstructorStatus.ON),
+		instructor2 = new Instructor("Karem Gutierrez","emaildekarem@gmail.com",448325L,null,644156303L,InstructorStatus.ON),
+		instructor3 = new Instructor("Daniel López","emaildedaniel@gmail.com",60153277L,null,644156303L,InstructorStatus.BUSY),
+		instructor4 = new Instructor("Kaitlyn Patrizia","emaildekaitlyn@gmail.com",40151902L,null,644156303L,InstructorStatus.BUSY),
+		instructor5 = new Instructor("Eva Castellón","emaildeeva@gmail.com",60153277L,null,644156303L,InstructorStatus.OFF)
 
 		));
 

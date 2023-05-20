@@ -54,7 +54,6 @@ public class AdminService {
     }
 
     public User updateUser(UserDTO userDTO) {
-
         User user = userRepository.findById(userDTO.getId()).orElseThrow(()-> new ResponseStatusException(HttpStatus.OK, "User does not exist"));
         user.setUserName(userDTO.getUserName());
         user.setEmail(userDTO.getEmail());

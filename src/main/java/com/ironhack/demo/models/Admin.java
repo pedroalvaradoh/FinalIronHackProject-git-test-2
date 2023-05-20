@@ -1,5 +1,6 @@
 package com.ironhack.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ public class Admin {
     private Long adminId;
     private String adminName;
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "admin_activity",
             joinColumns = @JoinColumn(name = "admin_id"),
             inverseJoinColumns = @JoinColumn(name = "activity_id"))
