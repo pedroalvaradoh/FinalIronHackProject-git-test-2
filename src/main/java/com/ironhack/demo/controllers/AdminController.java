@@ -37,8 +37,8 @@ public class AdminController {
 
     @PatchMapping("/update-activity-status/{activityId}")
     @ResponseStatus(HttpStatus.OK)
-    public Activity patchActivity(@RequestBody ActivityDTO activityDTO) {
-        return adminService.updateActivity(activityDTO);
+    public Activity patchActivity(@PathVariable Long activityId, @RequestBody ActivityDTO activityDTO) {
+        return adminService.updateActivity(activityId,activityDTO);
     }
 
     @DeleteMapping("/delete-activityyy/{id}")
@@ -55,8 +55,9 @@ public class AdminController {
 
     @PutMapping ("/update-user/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List <User> putUser(@RequestBody UserDTO userDTO) {
-        return null;
+    public User putUser(@RequestBody UserDTO userDTO) {
+
+        return adminService.updateUser(userDTO);
     }
 
     @DeleteMapping ("delete-user/{id}")

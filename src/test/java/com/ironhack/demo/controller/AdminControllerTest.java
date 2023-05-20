@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -32,6 +33,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
+@ActiveProfiles ({"test"})
 public class AdminControllerTest {
 
     // Nos da la instancia de la aplicacion
@@ -94,8 +96,8 @@ public class AdminControllerTest {
     //REVISAR DTO TEST!!!!!!!!!!!!!!!
     @Test
     void shouldUpdateActivity_WhenPatchMethodIsCalled() throws Exception {
-        Long activityId = 1L;
-        mockMvc.perform(patch("/update-activity-status/{activityId}",activityId)
+
+        mockMvc.perform(patch("/update-activity-status/" + 1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(activityDTO)))
                 .andExpect(status().isOk());
@@ -103,8 +105,8 @@ public class AdminControllerTest {
     }
     @Test
     void shouldDeleteActivity_WhenDeleteMethodIsCalled() throws Exception {
-        Long activityId = 1L;
-        mockMvc.perform(delete("/delete-activityyy/{id}", activityId))
+
+        mockMvc.perform(delete("/delete-activityyy/"+ 1))
                 .andExpect(status().isNoContent());
     }
     // Tests para rutas de tipo GET y PUT en la clase User
@@ -142,4 +144,5 @@ public class AdminControllerTest {
     /* Long activityId = 1L;
         mockMvc.perform(delete("/delete-activityyy/{id}", activityId))
                 .andExpect(status().isNoContent());*/
+
 }

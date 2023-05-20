@@ -36,8 +36,8 @@ public class AdminService {
     }
 
     //MANEJAR EXCEPCIONES
-    public Activity updateActivity(ActivityDTO activityDTO) {
-        Activity activity = activityRepository.findById(activityDTO.getActivityCode()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Activity not found"));
+    public Activity updateActivity(Long activityId, ActivityDTO activityDTO) {
+        Activity activity = activityRepository.findById(activityId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Activity not found"));
         activity.setActivityName(activityDTO.getActivityName());
         activity.setPrice(activityDTO.getPrice());
         activity.setActivityStatus(activityDTO.getActivityStatus());
@@ -53,9 +53,14 @@ public class AdminService {
         return userRepository.findAll();
     }
 
-    //public User user (UserDTO userDTO) {
-    //    User user = userRepository.findAllById(UserDTO.ge)
-    //}
+    public User updateUser(UserDTO userDTO) {
+
+        User user = userRepository.findById(userDTO.getId()).orElseThrow(()-> new ResponseStatusException(HttpStatus.OK, "User does not exist"));
+        user.setUserName(userDTO.getUserName());
+        user.setEmail(userDTO.getEmail());
+        user.setCreditCardInfo(userDTO.getCreditCardInfo());
+        return userRepository.save(user);
+    }
 
     public void deleteUser(Long id) {
         userRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "User does not exist"));
