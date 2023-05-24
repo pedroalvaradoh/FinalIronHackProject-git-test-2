@@ -15,7 +15,7 @@ public class User {
     private String userName;
     private String email;
     private Long creditCardInfo;
-    @OneToMany (mappedBy = "user")
+    @OneToMany (mappedBy = "user", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List <BookedActivity> bookedActivityList;
     public User() {

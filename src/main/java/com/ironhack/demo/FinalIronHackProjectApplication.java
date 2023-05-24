@@ -73,13 +73,19 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 		Activity activity3;
 		Activity activity4;
 		Activity activity5;
+		Activity activity6;
+		Activity activity7;
+
+
 
 		List <Activity> activityList = activityRepository.saveAll(List.of(
 				activity1 = new Activity("Pole Fitness",new BigDecimal(19.99), ActivityStatus.AVAILABLE),
 				activity2 = new Activity("Aerial Silks",new BigDecimal(19.99),ActivityStatus.AVAILABLE),
 				activity3 = new Activity("Pole Exotic",new BigDecimal(24.99),ActivityStatus.WAITING_LIST),
 				activity4 = new Activity("Aro",new BigDecimal(16.99),ActivityStatus.NOT_AVAILABLE),
-				activity5= new Activity("Stretching",new BigDecimal(15.99),ActivityStatus.WAITING_LIST)
+				activity5= new Activity("Stretching",new BigDecimal(15.99),ActivityStatus.WAITING_LIST),
+				activity6= new Activity("Acro yoga",new BigDecimal(13.99),ActivityStatus.AVAILABLE),
+				activity7= new Activity("Flow",new BigDecimal(12.99),ActivityStatus.NOT_AVAILABLE)
 
 		));
 
@@ -98,10 +104,9 @@ public class FinalIronHackProjectApplication implements CommandLineRunner {
 				admin2 = new Admin("Pedro Alvarado")
 		));
 
-		Roll roll1 = new Roll("Jose Solera");
+		Roll roll1 = new Roll("Jose Alamo");
 
 		rollRepository.save(roll1);
-
 
 	}
 }

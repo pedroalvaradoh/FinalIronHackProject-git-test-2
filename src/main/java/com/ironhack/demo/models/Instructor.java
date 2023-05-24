@@ -12,7 +12,7 @@ public class Instructor extends User {
     @Column(name = "instructor_status", columnDefinition = "ENUM('ON','OFF','BUSY')", nullable = false)
     private InstructorStatus instructorStatus;
     @OneToMany
-            (mappedBy = "instructor")
+            (mappedBy = "instructor", cascade = CascadeType.ALL)
     private List <BookedActivity> bookedActivityList;
 
     public Instructor() {
