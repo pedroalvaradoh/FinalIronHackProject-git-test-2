@@ -11,7 +11,7 @@ It is necessary to have installed the following softwares:
 
 # UML cases present in the project:
 <h3>UML</h3>
-<img src="FINAL PROJECT UML (1).jpeg">
+<img src="FINAL PROJECT UML (1).jpeg"<img src=
 
 ## 🌱 How to start this project
 - 1) To start, you need to fork or clone this repository to your local repository.
@@ -44,7 +44,7 @@ src/main/java/com/ironhack/demo/FinalIronHackProjectApplication.java
 ```
 
 - 5) You can check that the tables are created at MySQL:
-- 
+<img src="Screenshot 2023-05-25 174806.png">
 
 
 
