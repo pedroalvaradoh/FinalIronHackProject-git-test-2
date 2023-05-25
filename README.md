@@ -1,5 +1,5 @@
 # Making the Final IronHack Project
-This project is a back-end API following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot. This is an API where an Admin can add, update, delete, and get information
+This project is a back-end API (application programming interface) following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot. This is an API where an Admin can add, update, delete, and get information
 from users inscribed and interested to receive aerial classes to workout and have some fun for a while. For the moment, the Admin is the only user who has access and have permissions to
 update all the info presented in the Academy.
 
@@ -9,15 +9,23 @@ It is necessary to have installed the following softwares:
 - MySQL Workbench 8.0 <img src="https://icongr.am/devicon/mysql-original.svg?size=64&color=currentColor" height="30px" weight="30px">
 - Postman (an API platform for building and using APIs), this is optional, you can also use it online.
 
-# UML cases present in the project:
+# UML diagram present in the project:
 <h3>UML</h3>
-<img src="FINAL PROJECT UML (1).jpeg"<img src=
+<img src="FINAL PROJECT UML (1).jpeg">
 
 ## 🌱 How to start this project
-- 1) To start, you need to fork or clone this repository to your local repository.
+- 1) To start, you need to fork or clone this repository:
+```sh
+https://github.com/nthris/FinalIronHackProject.git
+```
 - 2) Then, open the project on IntelliJ.
 - 3) You have to connect your Database on MySQL Workbench 8.0 to your local server: Database> Connect to Database > Stored Connection: Local InstanceMySQL80 > Write your passwork previosly configured.
-- 4) For your personal use, the password and your local server, have to be modified on the section application.properties in Java, found at: 
+- 4) Create MySQL database
+```sh mysql
+create schema aerialapi;
+```
+
+- 4) For your personal use, the password `spring.datasource.username=root` and your local server `server.port=8085`, have to be modified on the section application.properties in Java, found at: 
 
 ```sh
 src/main/resources/application.properties
@@ -25,6 +33,7 @@ src/main/resources/application.properties
 ```
  
  ```java
+ //Database Properties
 spring.datasource.url=jdbc:mysql://localhost:3306/AerialApi?serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=mysql123
@@ -44,7 +53,42 @@ src/main/java/com/ironhack/demo/FinalIronHackProjectApplication.java
 ```
 
 - 5) You can check that the tables are created at MySQL:
-<img src="Screenshot 2023-05-25 174806.png">
+<img src="activity_table.png">
+<img src="user_table.png">
+<img src="instructor_table.png">
+
+- 6) Then, as an admin, you can proceed to perform the CRUD actions mentioned in the uml cases, such as: 
+GET + checkActivity() 
+DELETE + deleteActivity() 
+POST + postActivity() 
+PATCH + deleteActivity()
+
+by using Postman.
+
+7) Open Postman and proceed to configure it regarding the action you want to perform, these roots are coded at the AdminController folder:
+```sh
+src/main/java/com/ironhack/demo/controllers/AdminController.java
+```
+```
+GET localhost:8085/manage-activity
+DELETE localhost:8085/delete-activityyy/{id}
+```
+```
+POST localhost:8085/add-activity
+PATCH localhost:8085/update-activity-status/{activityId}
+```
+In these 2 Post and Patch petitions, you have to add a body in a JSON format and add the information you want: 
+```
+{
+    "activityCode": 2,
+    "activityName": "Aerial Silks",
+    "price": 19.99,
+    "activityStatus": "AVAILABLE"
+}
+```
+and you will get a 201 status created and a 200 status ok responses that confirms your changes.
+
+
 
 
 
