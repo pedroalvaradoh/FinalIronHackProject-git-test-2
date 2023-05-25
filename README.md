@@ -14,18 +14,18 @@ It is necessary to have installed the following softwares:
 <img src="FINAL PROJECT UML (1).jpeg">
 
 ## 🌱 How to start this project
-- 1) To start, you need to fork or clone this repository:
+1) To start, you need to fork or clone this repository:
 ```sh
 https://github.com/nthris/FinalIronHackProject.git
 ```
-- 2) Then, open the project on IntelliJ.
-- 3) You have to connect your Database on MySQL Workbench 8.0 to your local server: Database> Connect to Database > Stored Connection: Local InstanceMySQL80 > Write your passwork previosly configured.
-- 4) Create MySQL database
+2) Then, open the project on IntelliJ.
+3) You have to connect your Database on MySQL Workbench 8.0 to your local server: Database> Connect to Database > Stored Connection: Local InstanceMySQL80 > Write your passwork previosly configured.
+4) Create MySQL database
 ```sh mysql
 create schema aerialapi;
 ```
 
-- 4) For your personal use, the password `spring.datasource.username=root` and your local server `server.port=8085`, have to be modified on the section application.properties in Java, found at: 
+5) For your personal use, the password `spring.datasource.username=root` and your local server `server.port=8085`, have to be modified on the section application.properties in Java, found at: 
 
 ```sh
 src/main/resources/application.properties
@@ -46,18 +46,18 @@ server.port=8085
 spring.jpa.show-sql=true
  ```
 
-- 4) After the conection is done, you can run the project on IntelliJ, in the runnable class with the configuration Current File:
+6) After the conection is done, you can run the project on IntelliJ, in the runnable class with the configuration Current File:
 
 ```sh
 src/main/java/com/ironhack/demo/FinalIronHackProjectApplication.java
 ```
 
-- 5) You can check that the tables are created at MySQL:
+7) You can check that the tables are created at MySQL:
 <img src="activity_table.png">
 <img src="user_table.png">
 <img src="instructor_table.png">
 
-- 6) Then, as an admin, you can proceed to perform the CRUD actions mentioned in the uml cases, such as: 
+8) Then, as an admin, you can proceed to perform the CRUD actions mentioned in the uml cases, such as: 
 GET + checkActivity() 
 DELETE + deleteActivity() 
 POST + postActivity() 
@@ -65,20 +65,20 @@ PATCH + deleteActivity()
 
 by using Postman.
 
-7) Open Postman and proceed to configure it regarding the action you want to perform, these roots are coded at the AdminController folder:
+9) Open Postman and proceed to configure it regarding the action you want to perform, these roots are coded at the AdminController folder:
 ```sh
 src/main/java/com/ironhack/demo/controllers/AdminController.java
 ```
-```
+``` java
 GET localhost:8085/manage-activity
 DELETE localhost:8085/delete-activityyy/{id}
 ```
-```
+``` java
 POST localhost:8085/add-activity
 PATCH localhost:8085/update-activity-status/{activityId}
 ```
 In these 2 Post and Patch petitions, you have to add a body in a JSON format and add the information you want: 
-```
+``` json
 {
     "activityCode": 2,
     "activityName": "Aerial Silks",
@@ -87,6 +87,9 @@ In these 2 Post and Patch petitions, you have to add a body in a JSON format and
 }
 ```
 and you will get a 201 status created and a 200 status ok responses that confirms your changes.
+
+
+
 
 
 
