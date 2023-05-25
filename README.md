@@ -1,5 +1,5 @@
 # Making the Final IronHack Project
-This project is a back-end API (application programming interface) following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot. This is an API where an Admin can add, update, delete, and get information
+This project is a back-end API (application programming interface) following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot Framework. This is an API where an Admin can add, update, delete, and get information
 from users inscribed and interested to receive aerial classes to workout and have some fun for a while. For the moment, the Admin is the only user who has access and have permissions to
 update all the info presented in the Academy.
 
@@ -10,8 +10,7 @@ It is necessary to have installed the following softwares:
 - Postman (an API platform for building and using APIs), this is optional, you can also use it online.
 
 # UML diagram present in the project:
-<h3>UML</h3>
-<img src="FINAL PROJECT UML (1).jpeg">
+<img src="FINAL PROJECT UML2 .png" height="670" weight= "611">
 
 ## 🌱 How to start this project
 1) To start, you need to fork or clone this repository:
@@ -87,6 +86,29 @@ In these 2 Post and Patch petitions, you have to add a body in a JSON format and
 }
 ```
 and you will get a 201 status created and a 200 status ok responses that confirms your changes.
+
+## Resources
+
+This Spring Boot project was created at Spring Initializr with below settings:
+-DevTools – Spring Boot Development Tools
+-JPA – Java Persistence API including spring-data-JPA, spring-orm and Hibernate
+-MySQL – MySQL JDBC driver
+
+those settings were generated, downloaded, and imported to IntelliJ IDE.
+
+Defined Database Configurations
+Created Entity Classes in Models Layer
+Created JPA Data Repository in Repositories Layer
+Created Unit Testing for API Requests and Run the Unit Testing in Test Controller Layer
+
+## Next commits will be:
+In the nearby future, I want my API to have a front-end and that users are capable to log in, to update their profile information, and also, to book and to buy activities without the necessity of an Admin,
+also to have the option to download this API in their cellphones.
+
+## Additional links <img src="https://icongr.am/octicons/link-external.svg?size=64&color=c0c0c0" height="30px" weight="30px"> 
+[My Project Presentation](https://slides.com/nathaliaaristigueta/bold/fullscreen) 
+
+
 
 
 
