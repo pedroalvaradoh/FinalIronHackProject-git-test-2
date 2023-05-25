@@ -5,15 +5,15 @@ update all the info presented in the Academy.
 
 ## 📝 Instructions
 It is necessary to have installed the following softwares:
-- IntelliJ IDEA 
-- MySQL Workbench 8.0 <img src="https://icongr.am/devicon/mysql-original.svg?size=64&color=currentColor" height="30px" weight="30px">
-- Postman (an API platform for building and using APIs), this is optional, you can also use it online.
+- <img src="https://icongr.am/simple/intellijidea.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px"> IntelliJ IDEA 
+- <img src="https://icongr.am/devicon/mysql-original.svg?size=64&color=currentColor" height="30px" weight="30px"> MySQL Workbench 8.0 
+- <img src="https://icongr.am/simple/postman.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px"> Postman (an API platform for building and using APIs), this is optional, you can also use it online 
 
 ## UML diagram:
 <img src="FINAL PROJECT UML2 .png" height="670" weight= "611">
 
 ## 🌱 How to start this project
-1) To start, you need to fork or clone this repository:
+1) To start, you need to fork or clone this repository <img src="https://icongr.am/simple/github.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">
 ```sh
 https://github.com/nthris/FinalIronHackProject.git
 ```
@@ -116,6 +116,12 @@ In the nearby future, I want to develop the front-end and that users are capable
 
 ## Additional links <img src="https://icongr.am/octicons/link-external.svg?size=64&color=c0c0c0" height="30px" weight="30px"> 
 [My Project Presentation](https://slides.com/nathaliaaristigueta/bold/fullscreen) 
+
+## Contact
+<img src="https://icongr.am/simple/gmail.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">
+aristiguetanathalia@gmail.com
+<img src="https://icongr.am/simple/linkedin.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">
+[LinkedIn](https://www.linkedin.com/in/nathalia-aristigueta-de-abreu-89a535129/)
 
 
 
