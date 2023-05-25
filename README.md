@@ -1,5 +1,5 @@
 # Making the Final IronHack Project
-This project is a back-end API (application programming interface) following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot Framework. This is an API where an Admin can add, update, delete, and get information
+This project is a back-end API (application programming interface) following the best practices of a REST API, it was made with Java <img src="https://icongr.am/devicon/java-original.svg?size=128&color=currentColor" height="30px" weight="30px"> and SpringBoot Framework <img src="https://icongr.am/simple/spring.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px"> This is an API where an Admin can add, update, delete, and get information
 from users inscribed and interested to receive aerial classes to workout and have some fun for a while. For the moment, the Admin is the only user who has access and have permissions to
 update all the info presented in the Academy.
 
