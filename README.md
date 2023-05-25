@@ -6,17 +6,23 @@ update all the info presented in the Academy.
 ## 📝 Instructions
 It is necessary to have installed the following softwares:
 - IntelliJ IDEA 
-- MySQL Workbench 8.0 
+- MySQL Workbench 8.0 <img src="https://icongr.am/devicon/mysql-original.svg?size=64&color=currentColor" height="30px" weight="30px">
 - Postman (an API platform for building and using APIs), this is optional, you can also use it online.
 
-# UML cases presents in the project:
+# UML cases present in the project:
 <h3>UML</h3>
 <img src="FINAL PROJECT UML (1).jpeg">
 
 ## 🌱 How to start this project
-- 1) First, you need to open your project on IntelliJ
-- 2) You have to connect your Database on MySQL Workbench 8.0 to your local server: Database> Connect to Database > Stored Connection: Local InstanceMySQL80 > Write your passwork previosly configured.
-- 3) For your personal use, the password and your local server, have to be declared on the section application.properties in Java, found src/main/resources/application.properties
+- 1) To start, you need to fork or clone this repository to your local repository.
+- 2) Then, open the project on IntelliJ.
+- 3) You have to connect your Database on MySQL Workbench 8.0 to your local server: Database> Connect to Database > Stored Connection: Local InstanceMySQL80 > Write your passwork previosly configured.
+- 4) For your personal use, the password and your local server, have to be modified on the section application.properties in Java, found at: 
+
+```sh
+src/main/resources/application.properties
+
+```
  
  ```java
 spring.datasource.url=jdbc:mysql://localhost:3306/AerialApi?serverTimezone=UTC
@@ -31,7 +37,14 @@ server.port=8085
 spring.jpa.show-sql=true
  ```
 
-- 4) After the conection is done, you can run the project on IntelliJ,
+- 4) After the conection is done, you can run the project on IntelliJ, in the runnable class with the configuration Current File:
+
+```sh
+src/main/java/com/ironhack/demo/FinalIronHackProjectApplication.java
+```
+
+- 5) You can check that the tables are created at MySQL:
+- 
 
 
 
