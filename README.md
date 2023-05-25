@@ -9,7 +9,7 @@ It is necessary to have installed the following softwares:
 - MySQL Workbench 8.0 <img src="https://icongr.am/devicon/mysql-original.svg?size=64&color=currentColor" height="30px" weight="30px">
 - Postman (an API platform for building and using APIs), this is optional, you can also use it online.
 
-# UML diagram present in the project:
+## UML diagram:
 <img src="FINAL PROJECT UML2 .png" height="670" weight= "611">
 
 ## 🌱 How to start this project
@@ -57,10 +57,10 @@ src/main/java/com/ironhack/demo/FinalIronHackProjectApplication.java
 <img src="instructor_table.png">
 
 8) Then, as an admin, you can proceed to perform the CRUD actions mentioned in the uml cases, such as: 
-GET + checkActivity() 
-DELETE + deleteActivity() 
-POST + postActivity() 
-PATCH + deleteActivity()
+- GET + checkActivity() 
+- DELETE + deleteActivity() 
+- POST + postActivity() 
+- PATCH + deleteActivity()
 
 by using Postman.
 
@@ -79,31 +79,40 @@ PATCH localhost:8085/update-activity-status/{activityId}
 In these 2 Post and Patch petitions, you have to add a body in a JSON format and add the information you want: 
 ``` json
 {
-    "activityCode": 2,
-    "activityName": "Aerial Silks",
+    "activityCode": 1,
+    "activityName": "Pole Fitness",
     "price": 19.99,
     "activityStatus": "AVAILABLE"
 }
 ```
+### Attributes:
+
+- `activityCode` long -- the autogenereted id of the activity
+- `activityName` string -- the name of the activity
+- `price` bigdecimal -- the price of each activitin bigdecimal format
+- `activityStatus` enum  -- available in 3 different status: AVAILABLE, NOT_AVAILABLE,WAITING_LIST;
+
 and you will get a 201 status created and a 200 status ok responses that confirms your changes.
 
-## Resources
+### Technologies and tools:
 
 This Spring Boot project was created at Spring Initializr with below settings:
--DevTools – Spring Boot Development Tools
--JPA – Java Persistence API including spring-data-JPA, spring-orm and Hibernate
--MySQL – MySQL JDBC driver
+- DevTools – Spring Boot Development Tools
+- JPA – Java Persistence API including spring-data-JPA, spring-orm and Hibernate
+- MySQL – MySQL JDBC driver
+- IntelliJ IDE
+- MySQL
+- Postman
 
-those settings were generated, downloaded, and imported to IntelliJ IDE.
+### Main steps in the project:
 
-Defined Database Configurations
-Created Entity Classes in Models Layer
-Created JPA Data Repository in Repositories Layer
-Created Unit Testing for API Requests and Run the Unit Testing in Test Controller Layer
+- Database Configurations defined
+- Entity Classes in Models Layer created
+- JPA Data Repository in Repositories Layer created
+- Unit Testing for API Requests created and Run the Unit Testing in Test Controller Layer
 
 ## Next commits will be:
-In the nearby future, I want my API to have a front-end and that users are capable to log in, to update their profile information, and also, to book and to buy activities without the necessity of an Admin,
-also to have the option to download this API in their cellphones.
+In the nearby future, I want to develop the front-end and that users are capable to sign up and log in, to update their profile information, and also, to book and to buy activities without the necessity of an Admin.
 
 ## Additional links <img src="https://icongr.am/octicons/link-external.svg?size=64&color=c0c0c0" height="30px" weight="30px"> 
 [My Project Presentation](https://slides.com/nathaliaaristigueta/bold/fullscreen) 
