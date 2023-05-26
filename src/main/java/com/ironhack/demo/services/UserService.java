@@ -1,5 +1,6 @@
 package com.ironhack.demo.services;
 
+import com.ironhack.demo.dto.UserDTO;
 import com.ironhack.demo.models.Activity;
 import com.ironhack.demo.models.User;
 import com.ironhack.demo.repositories.ActivityRepository;
@@ -23,8 +24,12 @@ public class UserService {
 
     }
 
-    public User updateProfile(Long id) {
-        return userRepository.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Apologies, the profile data" + "+ id +" + "you are trying to update does not belong to you, try with another id"));
+    public User updateProfile(Long userId, UserDTO userDTO) {
+        User user = userRepository.findById(userDTO.getId()).orElseThrow(()-> new ResponseStatusException(HttpStatus.OK, "User does not exist"));
+        user.setUserName(userDTO.getUserName());
+        user.setEmail(userDTO.getEmail());
+        user.setCreditCardInfo(userDTO.getCreditCardInfo());
+        return userRepository.save(user);
     }
 
 }

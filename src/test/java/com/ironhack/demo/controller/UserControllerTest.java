@@ -2,9 +2,12 @@ package com.ironhack.demo.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ironhack.demo.dto.UserDTO;
 import com.ironhack.demo.enums.ActivityStatus;
 import com.ironhack.demo.models.Activity;
+import com.ironhack.demo.models.User;
 import com.ironhack.demo.repositories.ActivityRepository;
+import com.ironhack.demo.repositories.UserRepository;
 import com.ironhack.demo.services.ActivityService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,6 +29,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -42,29 +46,51 @@ public class UserControllerTest {
     @Autowired
     ActivityRepository activityRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     @BeforeEach
     void setUp() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-        Activity activit11 = new Activity("Calisthenics", new BigDecimal(14.99), ActivityStatus.AVAILABLE);
-        Activity activity12 = new Activity("Chinese Pole", new BigDecimal(18.99), ActivityStatus.WAITING_LIST);
+        Activity activity8 = new Activity("Calisthenics", new BigDecimal(14.99), ActivityStatus.AVAILABLE);
+        Activity activity9 = new Activity("Chinese Pole", new BigDecimal(18.99), ActivityStatus.WAITING_LIST);
 
-        activityRepository.saveAll(List.of(activit11, activity12));
+        activityRepository.saveAll(List.of(activity8, activity9));
+
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+        User user10 = new User("Carol Melendez","emaildecarol@gmail.com",5633181L, null);
+
+        userRepository.save(user10);
+
 
     }
 
     @Test
         void shouldPostNewActivity_WhenPostMethodIsCalled() throws Exception {
-        Activity activity13 = new Activity("Aero Yoga", new BigDecimal(13.99), ActivityStatus.AVAILABLE);
-        String body = objectMapper.writeValueAsString(activity13);
+        Activity activity10 = new Activity("Aero Yoga", new BigDecimal(13.99), ActivityStatus.AVAILABLE);
+        String body = objectMapper.writeValueAsString(activity10);
         MvcResult result = mockMvc.perform(post("/add-activity")
                             .content(body)
                             .contentType(MediaType.APPLICATION_JSON))
                     .andExpect(status().isCreated()).andReturn();
 
         assertTrue(result.getResponse().getContentAsString().contains("Aero"));
-        assertEquals(8, activityRepository.findAll().size());
+        assertEquals(10, activityRepository.findAll().size());
 
         System.out.println(result.getResponse().getContentAsString());
         }
+
+    UserDTO userDTO = new UserDTO("Carol Melendez","emaildecarol@gmail.com",5633181L);
+
+    //REVISAR ESTE TEST
+    @Test
+    void shouldUpdateUser_WhenPatchMethodIsCalled() throws Exception {
+
+        mockMvc.perform(patch("/update-profile/",1 )
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(userDTO)))
+                .andExpect(status().isOk());
+
+    }
 
 }

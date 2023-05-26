@@ -1,5 +1,6 @@
 package com.ironhack.demo.controllers;
 
+import com.ironhack.demo.dto.UserDTO;
 import com.ironhack.demo.models.Activity;
 import com.ironhack.demo.models.Instructor;
 import com.ironhack.demo.models.User;
@@ -27,10 +28,10 @@ public class UserController {
     }
 
     //buscar lógica de que el usuario solo pueda modificar su usuario
-    @PatchMapping ("/update-profile/{id}")
+    @PatchMapping ("/update-profile/{userId}")
     @ResponseStatus (HttpStatus.OK)
-    public User update(@PathVariable Long id) {
-        return userService.updateProfile(id);
+    public User update(@PathVariable Long userId, @RequestBody UserDTO userDTO) {
+        return userService.updateProfile(userId,userDTO);
     }
 
 }
