@@ -114,14 +114,20 @@ This Spring Boot project was created at Spring Initializr with below settings:
 ## Next commits will be:
 In the nearby future, I want to develop the front-end and that users are capable to sign up and log in, to update their profile information, and also, to book and to buy activities without the necessity of an Admin.
 
-## Additional links <img src="https://icongr.am/octicons/link-external.svg?size=64&color=c0c0c0" height="30px" weight="30px"> 
+## Additional links
+<img src="https://icongr.am/octicons/link-external.svg?size=64&color=c0c0c0" height="30px" weight="30px">
 [My Project Presentation](https://slides.com/nathaliaaristigueta/bold/fullscreen) 
 
 ## Contact
-<img src="https://icongr.am/simple/gmail.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">
-aristiguetanathalia@gmail.com
-<img src="https://icongr.am/simple/linkedin.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">
-[LinkedIn](https://www.linkedin.com/in/nathalia-aristigueta-de-abreu-89a535129/)
+<img src="https://icongr.am/simple/gmail.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px"> aristiguetanathalia@gmail.com
+
+<br>
+<br>
+<p>
+ 
+ <img src="https://icongr.am/simple/linkedin.svg?size=64&color=c0c0c0&colored=false" height="30px" weight="30px">  [LinkedIn](https://www.linkedin.com/in/nathalia-aristigueta-de-abreu-89a535129)
+ 
+
 
 
 
